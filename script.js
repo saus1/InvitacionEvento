@@ -58,6 +58,25 @@ function iniciarCuentaRegresiva(fechaEvento) {
   const intervalo = setInterval(actualizar, 60000); // actualiza cada minuto
 }
 
-// Configuración: poné la fecha y hora del evento aquí
-const fechaEvento = new Date("2026-10-15T20:00:00");
-iniciarCuentaRegresiva(fechaEvento);
+
+
+
+async function obtenerFechaEvento() {
+  try {
+    // URL de tu endpoint en Mokapi
+    const respuesta = await fetch("https://6aa6ae8bd7765db985078400.mockapi.io/fechadeevento/1");
+    const data = await respuesta.json();
+
+    // Asegurate que el JSON tenga un campo "fecha" en formato ISO
+    // Ejemplo: { "fecha": "2026-10-30T22:00:00" }
+    const fechaEvento = new Date(data.fecha);
+
+    iniciarCuentaRegresiva(fechaEvento);
+  } catch (error) {
+    console.error("Error al obtener la fecha del evento:", error);
+  }
+}
+
+obtenerFechaEvento();
+
+
