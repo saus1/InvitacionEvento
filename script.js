@@ -79,4 +79,46 @@ async function obtenerFechaEvento() {
 
 obtenerFechaEvento();
 
+document.getElementById("verInvitados").addEventListener("click", async () => {
+  try {
+    const respuesta = await fetch("https://6aa5fac1d7765db98507208b.mockapi.io/invitados");
+    const invitados = await respuesta.json();
 
+    // Si el endpoint devuelve un array, asegurate que sea así:
+    if (!Array.isArray(invitados)) {
+      console.error("El endpoint no devolvió un array de invitados");
+      return;
+    }
+
+    // Construcción de la tabla
+    let tabla = `
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Asistencia</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    invitados.forEach(i => {
+      tabla += `
+        <tr>
+          <td>${i.nombre}</td>
+          <td>${i.email}</td>
+          <td>${i.asistencia}</td>
+        </tr>
+      `;
+    });
+
+    tabla += `</tbody></table>`;
+
+    // Reemplaza el contenido anterior por la tabla
+    document.getElementById("resultado").innerHTML = tabla;
+
+  } catch (error) {
+    console.error("Error al obtener invitados:", error);
+  }
+});
