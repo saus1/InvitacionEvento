@@ -50,13 +50,19 @@ function iniciarCuentaRegresiva(fechaEvento) {
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
     const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+    const segundos = Math.floor((diferencia / 1000) % 60);
 
-    countdown.innerHTML = `Faltan ${dias} días, ${horas} horas y ${minutos} minutos 💖`;
+    countdown.innerHTML = `Faltan ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos 💖`;
   }
 
   actualizar();
-  const intervalo = setInterval(actualizar, 60000); // actualiza cada minuto
+  const intervalo = setInterval(actualizar, 1000); // actualiza cada segundo
 }
+
+// Configuración: fecha del evento
+const fechaEvento = new Date("2026-10-30T22:00:00");
+iniciarCuentaRegresiva(fechaEvento);
+
 
 
 
