@@ -34,6 +34,7 @@ document.getElementById("verDias").addEventListener("click", () => {
   document.getElementById("resultado").innerHTML = `Faltan ${diasRestantes} días para el evento 💖`;
 });
 
+
 function iniciarCuentaRegresiva(fechaEvento) {
   const countdown = document.getElementById("countdown");
 
@@ -56,12 +57,14 @@ function iniciarCuentaRegresiva(fechaEvento) {
   }
 
   actualizar();
-  const intervalo = setInterval(actualizar, 1000); // actualiza cada segundo
+  const intervalo = setInterval(actualizar, 1000);
 }
 
 // Configuración: fecha del evento
 const fechaEvento = new Date("2026-10-30T22:00:00");
 iniciarCuentaRegresiva(fechaEvento);
+
+
 
 
 
@@ -126,5 +129,18 @@ document.getElementById("verInvitados").addEventListener("click", async () => {
 
   } catch (error) {
     console.error("Error al obtener invitados:", error);
+  }
+});
+// Clave secreta (puede ser cualquier string)
+const claveCorrecta = "quince2026";
+
+document.getElementById("acceder").addEventListener("click", () => {
+  const claveIngresada = document.getElementById("clave").value;
+  
+  if (claveIngresada === claveCorrecta) {
+    document.getElementById("zonaPrivada").style.display = "block";
+    alert("Acceso concedido ✅");
+  } else {
+    alert("Clave incorrecta ❌");
   }
 });

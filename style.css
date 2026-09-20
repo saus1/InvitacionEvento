@@ -1,11 +1,4 @@
-/*body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fce4ec;
-  color: #333;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}*/
+
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -13,80 +6,190 @@ body {
   padding: 0;
   text-align: center;
   color: #333;
+  font-style: italic;   /* cursiva en toda la página */
+  font-size: 1.1em;     /* tamaño base más cómodo */
 
-  /* Fondo con tu imagen */
-  background-image: url('quince.jpg');
-  background-size: cover;       /* Que cubra toda la pantalla */
-  background-position: center;  /* Centrado */
-  background-attachment: fixed; /* Efecto elegante al hacer scroll */
+  /* Fondo */
+  background-image: url('azulQuince.jpg');
+  background-size: contain;     /* muestra la imagen completa */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Títulos principales */
+h1{
+  font-style: italic;   /* cursiva también en títulos */
+  font-weight: bold;
+  color:gold;       /* azul elegante */
+}
+
+h2, h3 {
+  font-style: italic;   /* cursiva también en títulos */
+  font-weight: bold;
+  color: #1e88e5;       /* azul elegante */
+}
+
+/* Párrafos */
+p {
+  font-style: italic;
+  font-size: 1.3em;
+  line-height: 1.6;     /* más espacio entre líneas para legibilidad */
 }
 
 
-header {
-  background-color: rgba(255, 182, 193, 0.6);
-  padding: 20px;
-  border-bottom: 2px solid #f8bbd0;
-}
 
+
+/* Secciones con transparencia acorde al fondo */
 section {
   margin: 30px auto;
   padding: 20px;
   width: 80%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(227, 242, 253, 0.75); /* azul cielo translúcido */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 182, 193, 0.4);
+  box-shadow: 0 0 10px rgba(137, 207, 240, 0.5); /* sombra azul suave */
 }
 
-img {
-  width: 150px;
-  border-radius: 10px;
-  margin: 10px;
+section h2 {
+  color: #1e88e5; /* azul vivo */
+  border-bottom: 2px solid rgba(137, 207, 240, 0.6);
+  padding-bottom: 5px;
 }
-
-form input, form select, form button {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
+.regalo {
+  margin: 30px auto;
+  padding: 20px;
   width: 80%;
-  border: 1px solid #f8bbd0;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(227, 242, 253, 0.8); /* azul translúcido */
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(63, 81, 181, 0.3);
 }
 
+.regalo h2 {
+  color: #1e88e5;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.regalo p {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #333;
+}
+
+
+/* Botones adaptados */
 button {
-  background-color: #f48fb1;
+  background-color: #3f51b5; /* azul profundo */
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 20px;
 }
 
-button:hover {
-  background-color: #ec407a;
+
+
+.mapa {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(137, 207, 240, 0.5); /* sombra azul suave */
 }
+button:hover {
+  background-color: #1e88e5; /* azul más vivo */
+}
+
+/* Cuenta regresiva */
 #countdown {
   font-size: 1.5em;
   margin-top: 10px;
-  color: #ec407a;
+  color: #1e88e5;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.6);
   display: inline-block;
   padding: 10px 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 0 10px rgba(137, 207, 240, 0.4);
+ 
 }
 
+/* Contenedor del formulario */
+.registro form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(227, 242, 253, 0.8); /* azul translúcido */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(63, 81, 181, 0.3);
+}
+
+/* Inputs y select */
+.registro input,
+.registro select {
+  padding: 12px;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  font-size: 1em;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.registro input:focus,
+.registro select:focus {
+  outline: none;
+  border-color: #1e88e5;
+  box-shadow: 0 0 8px rgba(30, 136, 229, 0.4);
+}
+
+/* Botón */
+.registro button {
+  padding: 12px;
+  background: linear-gradient(135deg, #3f51b5, #1e88e5);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.registro button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .registro form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .registro input,
+  .registro select,
+  .registro button {
+    font-size: 0.95em;
+  }
+}
+
+
+
+/* Footer */
 footer {
-  background-color: rgba(255, 182, 193, 0.9); /* Rosa más fuerte para contraste */
+  background-color: rgba(63, 81, 181, 0.7); /* azul elegante */
   padding: 15px;
   text-align: center;
   font-size: 0.9em;
-  color: #333;
-  border-top: 2px solid #f8bbd0;
-  position: relative; /* se asegura que aparezca en flujo normal */
+  color: #e3f2fd; /* azul cielo */
+  border-top: 2px solid rgba(137, 207, 240, 0.8);
 }
 
 footer a {
-  color:black;
+  color: #bbdefb;
   text-decoration: none;
   font-weight: bold;
 }
@@ -95,12 +198,13 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Tabla invitados */
 table {
   width: 90%;
   margin: 20px auto;
   border-collapse: collapse;
   background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 10px rgba(255, 182, 193, 0.4);
+  box-shadow: 0 0 10px rgba(137, 207, 240, 0.4);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -108,14 +212,14 @@ table {
 th, td {
   padding: 12px;
   text-align: center;
-  border-bottom: 1px solid #f8bbd0;
+  border-bottom: 1px solid rgba(137, 207, 240, 0.6);
 }
 
 th {
-  background-color: #f48fb1;
+  background-color: #3f51b5;
   color: white;
 }
 
 tr:hover {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: rgba(137, 207, 240, 0.2);
 }
