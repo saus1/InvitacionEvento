@@ -144,3 +144,35 @@ document.getElementById("acceder").addEventListener("click", () => {
     alert("Clave incorrecta ❌");
   }
 });
+
+document.getElementById("verResumen").addEventListener("click", async () => {
+  try {
+    const respuesta = await fetch(apiURL);
+    const invitados = await respuesta.json();
+
+    if (!Array.isArray(invitados)) {
+      console.error("El endpoint no devolvió un array de invitados");
+      return;
+    }
+
+    // Contadores
+    let van = 0;
+    let noVan = 0;
+
+    invitados.forEach(i => {
+      if (i.asistencia.toLowerCase() === "sí") {
+        van++;
+      } else if (i.asistencia.toLowerCase() === "no") {
+        noVan++;
+      }
+    });
+
+    // Mostrar resultado
+    document.getElementById("resultado").innerHTML = `
+      ✅ Invitados que asisten: <strong>${van}</strong><br>
+      ❌ Invitados que no asisten: <strong>${noVan}</strong>
+    `;
+  } catch (error) {
+    console.error("Error al obtener resumen de asistencia:", error);
+  }
+});

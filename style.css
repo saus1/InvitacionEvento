@@ -16,6 +16,9 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+#texto{
+  color: rgba(0, 195, 255, 0.915);
+}
 
 /* Títulos principales */
 h1{
@@ -23,6 +26,7 @@ h1{
   font-weight: bold;
   color:gold;       /* azul elegante */
 }
+
 
 h2, h3 {
   font-style: italic;   /* cursiva también en títulos */
@@ -35,6 +39,8 @@ p {
   font-style: italic;
   font-size: 1.3em;
   line-height: 1.6;     /* más espacio entre líneas para legibilidad */
+ 
+
 }
 
 
