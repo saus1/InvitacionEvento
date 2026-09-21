@@ -16,15 +16,20 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+
+
+
+
+
 #texto{
-  color: rgba(0, 195, 255, 0.915);
+  color:#1e88e5 ;
 }
 
 /* Títulos principales */
 h1{
   font-style: italic;   /* cursiva también en títulos */
   font-weight: bold;
-  color:gold;       /* azul elegante */
+  color:#1e88e5 ;       /* azul elegante */
 }
 
 
@@ -182,20 +187,32 @@ button:hover {
   }
 }
 
-
-
 /* Footer */
 footer {
-  background-color: rgba(63, 81, 181, 0.7); /* azul elegante */
+  display: flex;
+  justify-content: flex-star; /* alinea los ítems a la derecha */
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;   /* mismo ancho que las secciones */
+  width: 100%;
+  margin: 30px auto;
+  background-color: rgba(30, 136, 229, 0.1); /* tono de la página */
   padding: 15px;
-  text-align: center;
-  font-size: 0.9em;
-  color: #e3f2fd; /* azul cielo */
-  border-top: 2px solid rgba(137, 207, 240, 0.8);
+  border-top: 2px solid #1e88e5;
+  font-size: 0.95em;
+  color:rgb(34, 223, 242) ;
+  border-radius: 10px;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 10px;
 }
 
 footer a {
-  color: #bbdefb;
+  color: rgb(34, 223, 242) ;
   text-decoration: none;
   font-weight: bold;
 }
@@ -203,6 +220,40 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* Responsivo */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    text-align: right; /* mantiene alineación a la derecha en móviles */
+    width: 95%;
+  }
+
+  .footer-item {
+    justify-content: flex-end;
+    margin: 8px 0;
+    font-size: 1.1em;
+  }
+}
+
+
+/* Responsivo */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+  }
+
+  .footer-item {
+    justify-content: center;
+    margin: 8px 0;
+    font-size: 1.1em;
+  }
+}
+
+
+
 
 /* Tabla invitados */
 table {

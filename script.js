@@ -4,10 +4,9 @@ const apiURL = "https://6aa5fac1d7765db98507208b.mockapi.io/invitados";
 document.getElementById("formRegistro").addEventListener("submit", async (e) => {
   e.preventDefault();
   const nombre = document.getElementById("nombre").value;
-  const email = document.getElementById("email").value;
   const asistencia = document.getElementById("asistencia").value;
 
-  const nuevoInvitado = { nombre, email, asistencia };
+  const nuevoInvitado = { nombre, asistencia };
   await fetch(apiURL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -105,7 +104,6 @@ document.getElementById("verInvitados").addEventListener("click", async () => {
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Email</th>
             <th>Asistencia</th>
           </tr>
         </thead>
@@ -116,7 +114,6 @@ document.getElementById("verInvitados").addEventListener("click", async () => {
       tabla += `
         <tr>
           <td>${i.nombre}</td>
-          <td>${i.email}</td>
           <td>${i.asistencia}</td>
         </tr>
       `;

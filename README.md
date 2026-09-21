@@ -1,7 +1,8 @@
-# 🎉 Página Web - Presentación de evento 15 Años
+# 🎉 Página Web - Invitacion de evento 15 Años
 
 ## 👩 La Quinceañera
-- información sobre el alias.
+- Información sobre el alias.
+- Tema musical.
 
 
 ## 👨‍👩‍👧 Familia
@@ -18,6 +19,7 @@
 - Formulario para confirmar asistencia (nombre, correo, asistencia).
 - Los datos se guardan en una **API (mokapi.io)**.
 - Posibilidad de consultar invitados registrados.
+  
 
 ## 🔍 Consultas
 - Botón para ver lista de invitados confirmados.
