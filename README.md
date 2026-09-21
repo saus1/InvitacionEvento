@@ -24,4 +24,5 @@
 ## 🔍 Consultas
 - Botón para ver lista de invitados confirmados.
 - Botón para calcular los días restantes hasta el.
+- Boton para copiar el alias de la cuenta bancaria.
 - Resumen de la asitencia de invitados.
