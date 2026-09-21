@@ -10,10 +10,10 @@
   <header>
     <!-- <div id="countdown"></div>    aca del       -->
     <!-- Reproductor de música -->
-    <audio id="player" autoplay muted loop>
+    <audio id="player" autoplay muted loop preload="auto">
       <source src="jvke.mp3" type="audio/mpeg">
     </audio>
-    <button onclick="document.getElementById('player').muted=false">🔊 Activar sonido</button>
+    <button id="activarSonido" type="button">🔊 Activar sonido</button>
     
   </header>
   
@@ -34,7 +34,11 @@
     puedes hacerlo mediante transferencia bancaria. 
     ¡Tu gesto será siempre recordado con cariño!
   </p>
-  <p><strong>Alias:</strong> may.ub</p>
+  <div class="alias-box">
+    <p><strong>Alias:</strong> <span id="aliasBancario">may.ub</span></p>
+    <button id="copiarAlias" type="button">📋 Copiar alias</button>
+    <span id="mensajeAlias" role="status" aria-live="polite"></span>
+  </div>
   
 </section>
 
@@ -103,7 +107,6 @@
   <!-- Botón de invitados solo aparece si la clave es correcta -->
   <div id="zonaPrivada" style="display:none;">
     <button id="verInvitados">Ver Invitados Registrados</button>
-    <button id="verDias"></button>
     <button id="verResumen">📊 Ver resumen de asistencia</button>  
     <div id="resultado"></div>
   </div>

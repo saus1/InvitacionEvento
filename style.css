@@ -87,6 +87,32 @@ section h2 {
   color: #333;
 }
 
+.alias-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.alias-box p {
+  margin: 0;
+}
+
+#aliasBancario {
+  color: #1e88e5;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+#mensajeAlias {
+  color: #176b35;
+  font-size: 0.9em;
+  font-style: normal;
+  font-weight: bold;
+}
+
 
 /* Botones adaptados */
 button {
@@ -189,30 +215,51 @@ button:hover {
 
 /* Footer */
 footer {
-  display: flex;
-  justify-content: flex-star; /* alinea los ítems a la derecha */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
   align-items: center;
-  flex-wrap: wrap;
   max-width: 1200px;   /* mismo ancho que las secciones */
-  width: 100%;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
   margin: 30px auto;
-  background-color: rgba(30, 136, 229, 0.1); /* tono de la página */
-  padding: 15px;
-  border-top: 2px solid #1e88e5;
+  padding: 18px 24px;
+  background: rgba(8, 34, 70, 0.88);
+  border: 1px solid rgba(144, 202, 249, 0.55);
+  border-top: 3px solid #42a5f5;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(4, 25, 54, 0.35);
   font-size: 0.95em;
-  color:rgb(34, 223, 242) ;
-  border-radius: 10px;
+  color: #e3f2fd;
 }
 
 .footer-item {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  margin: 5px 10px;
+  min-width: 0;
+  padding: 8px 10px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.footer-item .icon {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  background: rgba(66, 165, 245, 0.22);
+  border: 1px solid rgba(144, 202, 249, 0.45);
+  border-radius: 50%;
+  font-style: normal;
 }
 
 footer a {
-  color: rgb(34, 223, 242) ;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #b3e5fc;
   text-decoration: none;
   font-weight: bold;
 }
@@ -224,30 +271,13 @@ footer a:hover {
 /* Responsivo */
 @media (max-width: 600px) {
   footer {
-    flex-direction: column;
-    text-align: right; /* mantiene alineación a la derecha en móviles */
+    grid-template-columns: 1fr;
     width: 95%;
-  }
-
-  .footer-item {
-    justify-content: flex-end;
-    margin: 8px 0;
-    font-size: 1.1em;
-  }
-}
-
-
-/* Responsivo */
-@media (max-width: 600px) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-    width: 95%;
+    padding: 14px 12px;
   }
 
   .footer-item {
     justify-content: center;
-    margin: 8px 0;
     font-size: 1.1em;
   }
 }

@@ -1,5 +1,42 @@
 const apiURL = "https://6aa5fac1d7765db98507208b.mockapi.io/invitados";
 
+const player = document.getElementById("player");
+const activarSonido = document.getElementById("activarSonido");
+
+activarSonido.addEventListener("click", async () => {
+  player.muted = false;
+
+  try {
+    await player.play();
+    activarSonido.textContent = "🔊 Sonido activado";
+  } catch (error) {
+    console.error("No se pudo reproducir la música:", error);
+  }
+});
+
+document.getElementById("copiarAlias").addEventListener("click", async () => {
+  const alias = document.getElementById("aliasBancario").textContent.trim();
+  const mensajeAlias = document.getElementById("mensajeAlias");
+
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(alias);
+    } else {
+      const textoTemporal = document.createElement("textarea");
+      textoTemporal.value = alias;
+      document.body.appendChild(textoTemporal);
+      textoTemporal.select();
+      document.execCommand("copy");
+      textoTemporal.remove();
+    }
+
+    mensajeAlias.textContent = "Alias copiado";
+  } catch (error) {
+    mensajeAlias.textContent = "No se pudo copiar. Alias: " + alias;
+    console.error("No se pudo copiar el alias:", error);
+  }
+});
+
 // Registrar invitado
 document.getElementById("formRegistro").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -24,15 +61,6 @@ document.getElementById("verInvitados").addEventListener("click", async () => {
   const lista = invitados.map(i => `${i.nombre} - ${i.asistencia}`).join("<br>");
   document.getElementById("resultado").innerHTML = lista;
 });
-
-// Calcular días restantes
-document.getElementById("verDias").addEventListener("click", () => {
-  const fechaEvento = new Date("2026-10-15");
-  const hoy = new Date();
-  const diasRestantes = Math.ceil((fechaEvento - hoy) / (1000 * 60 * 60 * 24));
-  document.getElementById("resultado").innerHTML = `Faltan ${diasRestantes} días para el evento 💖`;
-});
-
 
 function iniciarCuentaRegresiva(fechaEvento) {
   const countdown = document.getElementById("countdown");
